@@ -17,8 +17,15 @@ if (!process.env.JWT_SECRET || !process.env.JWT_SECRET.trim()) {
 
 app.disable("x-powered-by");
 
-app.use(helmet());
+// Mantener Helmet y permitir que el frontend de Render
+// pueda mostrar imágenes servidas por el backend.
+app.use(helmet({
+    crossOriginResourcePolicy: {
+        policy: "cross-origin"
+    }
+}));
 
+// Orígenes autorizados para consumir la API.
 app.use(cors({
     origin: [
         "http://localhost:5173",
