@@ -1,0 +1,6 @@
+-- AlterTable
+ALTER TABLE "Producto" ADD COLUMN     "descripcion" TEXT NOT NULL DEFAULT '',
+ADD COLUMN     "imagenUrl" TEXT NOT NULL DEFAULT '',
+ADD COLUMN     "marca" TEXT NOT NULL DEFAULT '',
+ADD COLUMN     "modelo" TEXT NOT NULL DEFAULT '',
+ADD COLUMN     "stock" INTEGER NOT NULL DEFAULT 0;

@@ -9,10 +9,21 @@ datasource db {
 }
 
 model Producto {
-  id        Int    @id @default(autoincrement())
-  nombre    String
-  precio    Float
-  categoria String
+  id          Int     @id @default(autoincrement())
+  nombre      String
+  precio      Float
+  categoria   String
+
+  // Información adicional del producto
+  marca       String  @default("")
+  modelo      String  @default("")
+  descripcion String  @default("")
+  imagenUrl   String  @default("")
+  stock       Int     @default(0)
+
+  // Fotografía almacenada directamente en PostgreSQL
+  imagen      Bytes?
+  imagenTipo  String  @default("")
 }
 
 model Usuario {
